@@ -1,0 +1,31 @@
+#first {
+    background-color: aqua;
+    width: 30%;
+    display: inline-block;
+}
+
+#second {
+    background-color: green;
+    width: 30%;
+    display: inline-block;
+}
+
+#third {
+    background-color: red;
+    width: 30%;
+    display: inline-block;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  
+    Read about absolute positioning
+    https://www.w3schools.com/css/css_positioning.asp
+
+    Read about negative margins
+*/

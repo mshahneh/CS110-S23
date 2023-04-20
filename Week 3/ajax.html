@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+    var url = "https://www.w3schools.com/js/ajax_info.txt" // can't access this url due to cors policy
+    var method = "GET"
+    var isAsync = true
+    var request = new XMLHttpRequest()
+    request.open(method, url, isAsync)
+    request.send()
+    request.onreadystatechange = function() {
+        if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+            alert("done")
+        }
+    }
+
+}
+</script>
+
+</body>
+</html>

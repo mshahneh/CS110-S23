@@ -1,0 +1,65 @@
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.card{
+    width: 100px;
+    height: 150px;
+    background-color: #444;
+    perspective: 1000px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1); /* scale the card to 110% of its size */
+    transition: transform 0.5s; /* transition the scale transformation over 0.5 seconds */
+}
+
+/* Matched cards */
+.card.matched {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.card .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card .card-front,
+.card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card .card-front {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.card .card-back {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    transform: rotateY(180deg);
+}
