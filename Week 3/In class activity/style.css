@@ -1,0 +1,16 @@
+/* TODO Add all your css styling here */
+
+.main-container{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+}
+
+#my-form{
+    display: flex;
+    flex-direction: column;
+}
+#value1, #value2, #value3{
+    margin-bottom: 5px;
+}
