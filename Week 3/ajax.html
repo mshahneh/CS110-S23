@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>ajax</title>
+        <style>
+            span {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="demo">
+            <h1>The XMLHttpRequest Object</h1>
+            <button type="button" onclick="loadDoc()">Change Content</button>
+            <div id="output"></div>
+        </div>
 
-<div id="demo">
-<h1>The XMLHttpRequest Object</h1>
-<button type="button" onclick="loadDoc()">Change Content</button>
-</div>
+        <script>
+            function loadDoc() {
+                var url = "http://50.21.190.71/ajax_test" // can't access this url due to cors policy
+                var method = "GET"
+                var isAsync = true
+                var request = new XMLHttpRequest()
+                request.open(method, url, isAsync)
+                request.send()
+                request.onreadystatechange = function() {
+                    if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+                        beautyJson = "";
+                        data = JSON.parse(request.responseText);
+                        console.log(data);
+                        for (key in data) {
+                            beautyJson += "<span> " + key + ": </span>" + data[key] + "<br/>";
+                        }
+                        document.getElementById("output").innerHTML = beautyJson;
+                    }
+                }
 
-<script>
-function loadDoc() {
-    var url = "https://www.w3schools.com/js/ajax_info.txt" // can't access this url due to cors policy
-    var method = "GET"
-    var isAsync = true
-    var request = new XMLHttpRequest()
-    request.open(method, url, isAsync)
-    request.send()
-    request.onreadystatechange = function() {
-        if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
-            alert("done")
-        }
-    }
+            }
+        </script>
 
-}
-</script>
-
-</body>
+    </body>
 </html>
