@@ -1,0 +1,42 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#board{
+    margin: 100px;
+}
+
+.chessSquare{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.available {
+    background-color: green;
+}
+
+.whiteSquare {
+    background-color: #f0d9b5;
+}
+
+.blackSquare {
+    background-color: #b58863;
+}
+
+.clicked {
+    color: green;
+}
