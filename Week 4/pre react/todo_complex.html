@@ -1,0 +1,40 @@
+<!-- todo list -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <!-- <script>
+        function add_task() {
+            var task = document.getElementById("task").value;
+            if (task == "") {
+                return;
+            }
+            var list = document.getElementById("list");
+            var li = document.createElement("li");
+            var text = document.createTextNode(task);
+            li.addEventListener('click', function(){this.classList.toggle("done")});
+            li.appendChild(text);
+            list.appendChild(li);
+            document.getElementById("task").value = "";
+        }
+    </script> -->
+    <!-- <style>
+        #list li {
+            margin-bottom: 10px;
+        }
+        #list .done {
+            text-decoration: line-through;
+        }
+    </style> -->
+    <script src="todo_complex.js"></script>
+    <link rel="stylesheet" href="todo_complex.css">
+</head>
+<body>
+    <h1> To do list</h1>
+    <input type="text" id="task" placeholder="Enter a task"> 
+    <button id="add" onclick="add_task()" >Add</button>
+    <hl/>
+    <ul id="list">
+    </ul>
+</body>
+</html>

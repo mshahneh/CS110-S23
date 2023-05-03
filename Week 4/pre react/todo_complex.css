@@ -1,0 +1,26 @@
+li {
+    margin-bottom: 10px;
+    background-color: #eee;
+    padding: 10px;
+    min-width: 100px;
+}
+.done {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+#list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#task {
+    padding: 15px;
+    margin-left: 20px
+}
+
+li > div{
+    display: inline
+}

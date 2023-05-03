@@ -1,5 +1,6 @@
 
 export default function MyButton(props) {
+  console.log(props.text.isLegal)
   let text = "";
   if (props.text.type !== "empty")
     text = props.text.type;

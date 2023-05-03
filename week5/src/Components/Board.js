@@ -28,7 +28,7 @@ class Board extends React.Component {
             return {type:"empty", color: "empty", isLegal: isLegal}
         else
             //  merge two json objects
-            return this.props.chess.get(col + String(row))
+            return {...this.props.chess.get(col + String(row)), isLegal: isLegal}
     }
 
     move = function (col, row) {
@@ -37,7 +37,7 @@ class Board extends React.Component {
             this.setState({ from: col + String(row), legalMoves:legalMoves})
         }
         else {
-            this.props.chess.move({ from: this.state.from, to: col + String(row), })
+            this.props.move(this.state.from, col + String(row))
             this.setState({ from: null, legalMoves: null })
         }
     }
