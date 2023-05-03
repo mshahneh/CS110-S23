@@ -51,6 +51,7 @@ class Board extends React.Component {
                         text={this.buttonName(column, row)}
                         onclick={()=>this.move(column, row)}
                         isClicked={this.state.from === column + String(row)}
+                        disabled={this.props.turn !== this.props.chess.get(column + String(row)).color}
                         SquareColor={(row + columns.indexOf(column)) % 2 === 0 ? "whiteSquare" : "blackSquare"}
                      />)
                     } </div>)}

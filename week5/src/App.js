@@ -31,6 +31,7 @@ class App extends React.Component {
     return (<div> 
       <h1> Chess </h1>
       <p> turn: {this.state.turn} </p>
+      {this.state.chess.inCheck() ? <p> Check </p> : null}
       <Board chess={this.state.chess} turn={this.state.turn} move={this.move}></Board>
        </div>)
   }

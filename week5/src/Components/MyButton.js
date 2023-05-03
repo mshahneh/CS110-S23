@@ -1,6 +1,5 @@
 
 export default function MyButton(props) {
-  console.log(props.text.isLegal)
   let text = "";
   if (props.text.type !== "empty")
     text = props.text.type;
@@ -13,5 +12,5 @@ export default function MyButton(props) {
   if (props.isClicked)
     bg = " clicked";
 
-  return (<button className={"chessSquare " + color + bg} onClick={props.onclick}> {text} </button>);
+  return (<button disabled={props.disabled && !props.text.isLegal} className={"chessSquare " + color + bg} onClick={props.onclick}> {text} </button>);
 }
