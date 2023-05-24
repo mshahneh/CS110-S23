@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Node.js Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <ul id="chats">
+
+        </ul>
+    </div>
+    <input type="text" id="chatText"/>
+    <button id="submit"> submit </button>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on("starting data", (data)=>{
+        console.log("we got the data", data)
+    })
+    socket.on("chat message", (data)=>{
+        let messages = document.getElementById("chats");
+        let item = document.createElement('li');
+        item.textContent = data
+        messages.appendChild(item);
+    })
+
+    button = document.getElementById("submit");
+    button.addEventListener("click", ()=>{
+        let text = document.getElementById('chatText').value;
+        socket.emit("chat message", text)
+
+    })
+</script>
+</html>
