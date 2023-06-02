@@ -28,3 +28,24 @@ router.get('/logout', (req, res) => {
     req.session.destroy();
     res.send({msg: "Logged out", status: true})
   });
+
+router.post('/signup', async (req, res)=>{
+  console.log("user is trying to signup")
+  const {username, password, name} = req.body;
+  console.log(username, password, name)
+  const user = new User ({
+      username: username,
+      password: password,
+      name: name
+  })
+
+  try{
+      const dataSaved = await user.save();
+      res.status(200).json(dataSaved);
+  }
+  catch (error){
+      console.log(error);
+      res.send("ERROR!")
+  }
+})
+
